@@ -1,4 +1,4 @@
-# 🐅 Clemson Alumni Event Location Targeting Demo
+# 🐅 Alumni Event Location Targeting Demo
 
 A comprehensive **Streamlit in Snowflake** application for analyzing alumni donor data and optimizing event location selection in the Greenville, SC area. This demo showcases advanced geospatial analytics with **PyDeck H3 hexagon visualization**, interactive filtering, and data visualization capabilities running natively within Snowflake.
 
