@@ -7,6 +7,8 @@ USE SCHEMA ALUMNI_TARGETING;
 
 -- Create actual tables for Greenville County addresses with focus on target zip codes
 -- Using the specified address database: US_POINTS_OF_INTEREST__ADDRESSES.cybersyn.us_addresses
+-- or look for the us_addresses table in  
+-- SNOWFLAKE_PUBLIC_DATA_FREE from the Markeplace (the data share has recently changed)
 
 -- Create table for target zip code addresses (70% of our data)
 CREATE OR REPLACE TABLE TARGET_ZIP_ADDRESSES AS
