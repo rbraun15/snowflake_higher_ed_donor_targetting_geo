@@ -5,11 +5,18 @@
 USE DATABASE HIGHER_ED_DEMO;
 USE SCHEMA ALUMNI_TARGETING;
 
+-- ================================================
+-- !! IMPORTANT - read below
+-- ================================================
+-- This step relies on a marketplace share for the table - us_addresses (update lines 31 and 50 to reflect locaiton of your us_addresses)
+--   There have been some changes on packaigng in the markeplace, depending on when you added the share it may be in different DB in your environment
+--   Possible locations include:
+--    1) US_POINTS_OF_INTEREST__ADDRESSES.cybersyn.us_addresses
+--    2) SNOWFLAKE_PUBLIC_DATA_FREE.PUBLIC_DATA_FREE.us_addresses 
+--    3) other
+--
 -- Create actual tables for Greenville County addresses with focus on target zip codes
--- Using the specified address database: US_POINTS_OF_INTEREST__ADDRESSES.cybersyn.us_addresses
--- or look for the us_addresses table in  
--- SNOWFLAKE_PUBLIC_DATA_FREE from the Markeplace (the data share has recently changed)
-
+--
 -- Create table for target zip code addresses (70% of our data)
 CREATE OR REPLACE TABLE TARGET_ZIP_ADDRESSES AS
 SELECT 
