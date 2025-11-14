@@ -12,7 +12,7 @@ warnings.filterwarnings('ignore')
 
 # Page configuration
 st.set_page_config(
-    page_title="Clemson Alumni Event Location Targeting - Greenville, SC",
+    page_title="Alumni Event Location Targeting - Greenville, SC",
     page_icon="🐅",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -859,7 +859,7 @@ def create_static_map_image(df, venues_df=None, map_type="points", h3_resolution
                 },
                 color_discrete_map=color_map,
                 mapbox_style="open-street-map" if map_style != "white-bg" else "white-bg",
-                title=f'Clemson Alumni Donor Locations - {len(df)} Records',
+                title=f'Alumni Donor Locations - {len(df)} Records',
                 width=1200,
                 height=800
             )
@@ -898,7 +898,7 @@ def create_static_map_image(df, venues_df=None, map_type="points", h3_resolution
                     hover_data={'donor_count': True, 'total_annual': ':.0f'},
                     color_continuous_scale='Reds',
                     mapbox_style="open-street-map" if map_style != "white-bg" else "white-bg",
-                    title=f'Clemson Alumni H3 Analysis (Level {h3_resolution}) - {len(h3_agg)} Cells',
+                    title=f'Alumni H3 Analysis (Level {h3_resolution}) - {len(h3_agg)} Cells',
                     width=1200,
                     height=800
                 )
@@ -1010,7 +1010,7 @@ def create_charts(df):
 
 def main():
     # Header
-    st.markdown('<h1 class="main-header">🐅 Clemson Alumni Event Location Targeting</h1>', 
+    st.markdown('<h1 class="main-header">🐅 Alumni Event Location Targeting</h1>', 
                 unsafe_allow_html=True)
     st.markdown('<h2 class="sub-header">Greenville, SC Area Analysis - Streamlit in Snowflake</h2>', 
                 unsafe_allow_html=True)
@@ -1334,7 +1334,7 @@ def main():
                 st.download_button(
                     label="📥 Filtered Data",
                     data=csv_data,
-                    file_name=f"clemson_alumni_filtered_{len(filtered_df)}_records.csv",
+                    file_name=f"alumni_filtered_{len(filtered_df)}_records.csv",
                     mime="text/csv",
                     help="Download current filtered dataset as CSV"
                 )
@@ -1346,7 +1346,7 @@ def main():
                 st.download_button(
                     label="📥 Complete Data",
                     data=csv_all_data,
-                    file_name=f"clemson_alumni_complete_{len(donors_df)}_records.csv",
+                    file_name=f"alumni_complete_{len(donors_df)}_records.csv",
                     mime="text/csv",
                     help="Download complete dataset as CSV"
                 )
@@ -1359,7 +1359,7 @@ def main():
                 from datetime import datetime
                 
                 report_buffer = io.StringIO()
-                report_buffer.write("CLEMSON ALUMNI EVENT TARGETING REPORT\n")
+                report_buffer.write("ALUMNI EVENT TARGETING REPORT\n")
                 report_buffer.write("="*50 + "\n")
                 report_buffer.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
                 report_buffer.write(f"Total Records Analyzed: {len(filtered_df):,}\n")
@@ -1465,7 +1465,7 @@ def main():
                 st.download_button(
                     label="📊 Map + Table Report",
                     data=report_content,
-                    file_name=f"clemson_alumni_analysis_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt",
+                    file_name=f"alumni_analysis_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt",
                     mime="text/plain",
                     help="Download comprehensive analysis report with map data and table"
                 )
@@ -1495,7 +1495,7 @@ def main():
                             st.download_button(
                                 label="📥 Download Map PNG",
                                 data=img_bytes,
-                                file_name=f"clemson_alumni_map_{current_map_type}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png",
+                                file_name=f"alumni_map_{current_map_type}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png",
                                 mime="image/png",
                                 help="Download current map view as high-resolution PNG image"
                             )
